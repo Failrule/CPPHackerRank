@@ -15,7 +15,6 @@ class Rectangle
     {
         cout << m_int_ancho << " " <<m_int_alto << endl;
     }
-
 };
 
 /* 
