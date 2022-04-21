@@ -25,15 +25,14 @@ int main() {
     {
         cin >> int_temp; //Ingresa número de la consulta
         ite_menor = lower_bound (vec_numeros.begin(), vec_numeros.end(), int_temp); //Encuentra el valor más cercano por encima del número de la consulta
-        int_menor = ite_menor - vec_numeros.begin(); //Asigna la posición que el número encontrado ocupa en el arreglo a una variable
-        int_menor++; //Corrige a index(1-based)
-        if(find(vec_numeros.begin(), vec_numeros.end(), int_temp) != vec_numeros.end()) //Si el número de la consulta se encuentra en el arreglo
+        
+        if(vec_numeros[ite_menor - vec_numeros.begin()] == int_temp) //Si el número de la consulta se encuentra en el arreglo
         {
-            cout << "Yes " << int_menor << endl; //Imprime el número más cercano por encima, en este caso él mismo
+            cout << "Yes " << (ite_menor - vec_numeros.begin()+1) << endl; //Imprime el número más cercano por encima, en este caso él mismo y arregla a (1based)
         }
         else
         {
-            cout << "No " << int_menor << endl; //Imprime el número más cercano por encima, en este caso el que de lugar en el arreglo
+            cout << "No " << (ite_menor - vec_numeros.begin()+1) << endl; //Imprime el número más cercano por encima, en este caso el que de lugar en el arreglo y arregla a (1based<)
         }
     }
     return 0;
